@@ -1,0 +1,12 @@
+# Runtime / instance data — each agent forges its own; never published
+chain/
+tasks/
+**/blockspace/
+**/LOCKED
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
