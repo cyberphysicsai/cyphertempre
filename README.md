@@ -41,6 +41,10 @@ cyphertempre/
     └── skills/self-model/               # SKILL.md + 9 modules + selftest + base registry
 ```
 
+## Privacy
+
+Local-only, collects nothing, transmits nothing — see [`PRIVACY.md`](PRIVACY.md).
+
 ## License
 
 MIT — see `LICENSE`. © 2026 Cypher Tempre (cyberphysicsai).
