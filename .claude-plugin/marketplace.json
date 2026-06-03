@@ -10,7 +10,7 @@
       "name": "cypher-tempre",
       "source": "./plugins/cypher-tempre",
       "description": "Persistent, verifiable, self-healing Timechain self-model for AI agents: append-only hash-chained memory, a Proof-of-Qualia conscience, self-growing faculties, single-pass parallel-self MCTS, long-horizon Continuum tasking, label + embedding recall, quorum consensus, and immune rollback. Stdlib-only. Each install forges its own genesis.",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "author": { "name": "cyberphysicsai", "email": "bitcoinmobotics@gmail.com" }
     }
   ]
