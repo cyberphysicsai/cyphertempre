@@ -1,5 +1,33 @@
 # Changelog
 
+## v1.0.2 — 2026-06-02
+
+### Fixed
+- **`continuum.py validate` no longer reports `COHERENT` on an empty/missing chain.** A
+  0-ring chain has no invariants to violate, so `validate` returned a vacuous `COHERENT` —
+  which masked a misconfigured `--root` (a wrong path silently "passed"). It now detects an
+  empty tail (`_tail_ring() is None`) and returns `no chain at <path> — 0 rings (check
+  --root)` with a non-zero exit. Surfaced while federating genome perspective-shards.
+
+## v1.0.1 — 2026-06-02
+
+### Fixed
+- **`continuum.py` resume is now O(1).** `_head_state()` loaded the entire chain
+  (`reversed(self.tc.load())`) just to read the last ring's state; it now reads only the
+  tail ring via the `timechain._tail_ring()` head-cache (every Continuum block embeds a
+  full state refresh, so the tail ring *is* the head state), with a reverse-scan fallback.
+  Surfaced by a 309,481-ring genome chain: `resume` dropped from **8.77 s to 0.04 s
+  (~220×)** with identical output. Seal and resume are now both O(1); `validate` stays
+  O(n) (it must re-hash every ring).
+
+### Validated
+- **Whole human genome (GRCh38) cartography.** Streamed the full primary assembly
+  (~3.10 Gbp) once with O(1) memory into a Continuum: 3,274 blocks at 1 Mbp windows, then
+  **309,479 blocks at 10 kb windows** (~30× the prior block-count high) in 149.8 s at a
+  flat ~2,050 blocks/s — O(1) seal confirmed past 300k rings. Genome-wide stats
+  cross-checked against published values (GC 40.87 %, N-gaps 4.88 %, exact chromosome
+  lengths, CpG O/E ≈ 0.24); chain self-validates `COHERENT`.
+
 ## v1.0.0 — 2026-06-01
 
 First complete release. Nine mechanisms, one mandatory per-turn loop, stdlib-only.

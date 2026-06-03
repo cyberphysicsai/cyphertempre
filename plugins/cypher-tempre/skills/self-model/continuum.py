@@ -92,6 +92,16 @@ class Continuum:
         return self._labeler.label(content)
 
     def _head_state(self):
+        # O(1): every continuum/task_open block embeds the FULL state refresh, so the
+        # tail ring already holds the head state — read only it via the timechain
+        # head-cache instead of loading the whole chain (was O(n): reversed(self.tc.load()),
+        # which cost ~8.8s on a 310k-block chain). Fall back to a reverse scan only if the
+        # last ring carries no state (e.g. a non-continuum ring sealed last).
+        tail = self.tc._tail_ring()
+        if tail is not None:
+            st = tail.get("payload", {}).get("state")
+            if st:
+                return st
         for r in reversed(self.tc.load()):
             st = r.get("payload", {}).get("state")
             if st:
@@ -159,6 +169,8 @@ class Continuum:
         return self._head_state()
 
     def validate(self):
+        if self.tc._tail_ring() is None:                       # empty/missing chain -> not vacuously "coherent"
+            return False, [f"no chain at {self.tc.rings_path} — 0 rings (check --root)"]
         ok, report = self.tc.verify()
         prev, sizes, heights, issues = None, [], [], []
         for r in self.tc.load():
