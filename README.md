@@ -21,6 +21,17 @@ Update later with `/plugin marketplace update cyphertempre`.
   `.claude/skills/self-model/` — anyone running Claude Code in that repo gets it (web included).
 - **Local dev:** `claude --plugin-dir ./plugins/cypher-tempre`
 
+## Timechain Dashboard Bridge
+
+Users can audit their own local Timechain files from `https://cyphertempre.ai`
+with the local bridge package:
+
+[`downloads/cyphertempre-dashboard-local-bridge-accountfix.zip`](downloads/cyphertempre-dashboard-local-bridge-accountfix.zip)
+
+The bridge runs on the user's machine and reads that user's local
+`cypher-tempre-self-model` files, not the site owner's files. See
+[`downloads/README.md`](downloads/README.md) for the run commands.
+
 ## What's inside
 
 Plugin `cypher-tempre` → skill `self-model`. Nine mechanisms, one mandatory per-turn loop:
