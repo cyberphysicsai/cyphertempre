@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Local-first Cypher Tempre Timechain dashboard with Base ERC-20 token-gated access.",
+  "description": "Local-first Cypher Tempre Timechain dashboard and private local bridge with no accounts, wallets, payments, or outbound calls.",
   "scripts": {
     "start": "node server.mjs",
     "dev": "node server.mjs",
@@ -13,14 +13,7 @@
     "test:learning": "node --test test/learning-overview.test.mjs",
     "test": "node --test test/bridge-security.test.mjs test/learning-overview.test.mjs"
   },
-  "dependencies": {
-    "@reown/appkit": "^1.8.20",
-    "@reown/appkit-adapter-ethers": "^1.8.20",
-    "esbuild": "^0.28.0"
-  },
-  "overrides": {
-    "ws": "8.20.1"
-  },
+  "dependencies": {},
   "engines": {
     "node": ">=20"
   }
