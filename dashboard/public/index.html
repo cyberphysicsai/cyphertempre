@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cypher Tempre Timechain Dashboard</title>
+    <link rel="stylesheet" href="styles.css?v=20260611-atomicage">
+  </head>
+  <body>
+    <canvas id="motifCanvas" aria-hidden="true"></canvas>
+    <main class="shell">
+      <section id="bridgeGate" class="gate hidden">
+        <div class="gate-copy">
+          <p class="eyebrow">Local Bridge</p>
+          <h1>Audit Your Agent&rsquo;s Timechain</h1>
+          <p class="lede">Free and private. This page is only a shell &mdash; your agent&rsquo;s memory is read by a bridge on <em>your</em> machine and never leaves it.</p>
+          <ol class="pair-steps">
+            <li>
+              <span>Run the bridge on this machine</span>
+              <pre><code>git clone https://github.com/cyberphysicsai/cypher-tempre-genesis
+cd cypher-tempre-genesis/dashboard
+npm install
+npm run bridge</code></pre>
+            </li>
+            <li>
+              <span>Copy the pairing code from the terminal</span>
+              <p class="step-note">It looks like <code>1A2B-3C4D-5E</code> and changes each run.</p>
+            </li>
+            <li>
+              <span>Enter it in the panel &mdash; the dashboard loads instantly</span>
+              <p class="step-note">No account, no payment, no outbound calls. This page talks only to <code>127.0.0.1:8788</code>.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="gate-panel">
+          <div id="bridgeState" class="status">Bridge disconnected</div>
+          <label class="field">
+            <span>Bridge URL</span>
+            <input id="bridgeUrl" spellcheck="false" value="http://127.0.0.1:8788">
+          </label>
+          <button id="checkBridge" class="secondary">Check Bridge</button>
+          <label class="field">
+            <span>Pairing code</span>
+            <input id="pairCode" spellcheck="false" placeholder="XXXX-XXXX">
+          </label>
+          <button id="pairBridge" class="primary">Pair Bridge</button>
+          <p id="bridgeMessage" class="message"></p>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard hidden">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Personal Chain Agent</p>
+            <h1>Timechain Audit</h1>
+          </div>
+          <div class="root-pill" id="rootPath"></div>
+        </header>
+
+        <section class="stats-grid" id="statsGrid"></section>
+
+        <section class="band" id="learningBand">
+          <div class="section-head">
+            <h2>Learning Membrane</h2>
+            <span id="learningMeta"></span>
+          </div>
+          <div class="triptych">
+            <article class="integrity-card" id="intChain"><h3>Hash Chain</h3><strong>—</strong><span class="meta"></span></article>
+            <article class="integrity-card" id="intQuorum"><h3>Witness Quorum</h3><strong>—</strong><span class="meta"></span></article>
+            <article class="integrity-card" id="intDigests"><h3>Telemetry Digests</h3><strong>—</strong><span class="meta"></span></article>
+          </div>
+          <div class="learning-grid">
+            <div>
+              <h3>Economics</h3>
+              <div id="economicsStats" class="economics"></div>
+              <div id="tokensSpark" class="spark-wrap"></div>
+            </div>
+            <div>
+              <h3>Seal Quality <span class="meta">(brightness over chain height)</span></h3>
+              <div id="qualitySpark" class="spark-wrap"></div>
+            </div>
+          </div>
+          <div class="learning-grid">
+            <div>
+              <h3>Operators <span class="meta">(adoptions &amp; rollbacks — sealed, falsifiable)</span></h3>
+              <div id="operatorList" class="domain-list"></div>
+            </div>
+            <div>
+              <h3>Dream Cycles</h3>
+              <div id="dreamList" class="domain-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="band split">
+          <div>
+            <div class="section-head">
+              <h2>Domain Context</h2>
+              <span id="domainMeta"></span>
+            </div>
+            <div id="domainList" class="domain-list"></div>
+          </div>
+          <div>
+            <div class="section-head">
+              <h2>Faculty Surface</h2>
+              <span id="facultyMeta"></span>
+            </div>
+            <div class="faculty-bars">
+              <div>
+                <h3>Modalities</h3>
+                <div id="modalityBars"></div>
+              </div>
+              <div>
+                <h3>Senses</h3>
+                <div id="senseBars"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="band">
+          <div class="section-head">
+            <h2>Rings</h2>
+            <div class="filters">
+              <input id="ringSearch" placeholder="Search rings">
+              <select id="ringType">
+                <option value="">All types</option>
+              </select>
+            </div>
+          </div>
+          <div class="ring-layout">
+            <div id="ringList" class="ring-list"></div>
+            <article id="ringDetail" class="detail-panel">
+              <h3>Select a ring</h3>
+              <pre></pre>
+            </article>
+          </div>
+        </section>
+
+        <section class="band">
+          <div class="section-head">
+            <h2>Blockspace</h2>
+            <span id="blockspaceMeta"></span>
+          </div>
+          <div id="blockspaceList" class="blob-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="blobDialog">
+      <div class="dialog-head">
+        <h2>Blockspace Blob</h2>
+        <button id="closeBlob" class="ghost">Close</button>
+      </div>
+      <pre id="blobPreview"></pre>
+    </dialog>
+
+    <script src="config.js?v=20260611-atomicage"></script>
+    <script type="module" src="app.js?v=20260611-atomicage"></script>
+  </body>
+</html>

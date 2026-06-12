@@ -1,0 +1,356 @@
+{
+  "pack_format": 1,
+  "name": "trading-analysis",
+  "version": "1.0",
+  "domain": "trading & financial analysis",
+  "author": "Fable",
+  "created_at": "2026-06-11T04:00:28.095606+00:00",
+  "donor": {
+    "genesis_name": "Fable",
+    "chain_head_index": 37,
+    "chain_head_hash": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc"
+  },
+  "faculties": [
+    {
+      "kind": "sense",
+      "name": "Regime-Shift Sensing",
+      "function": "Detect early evidence that the market regime is changing: volatility clustering or compression, cross-asset correlation breakdown, liquidity thinning, momentum handing off to mean-reversion (or the reverse), breadth divergence, and trend exhaustion. Tag whether the input describes a trending, ranging, or crisis regime — and flag any analysis that silently assumes yesterday's regime still holds.",
+      "category": "temporal",
+      "seed_terms": [
+        "volatility",
+        "regime",
+        "correlation",
+        "momentum",
+        "mean-reversion",
+        "breakout",
+        "breadth",
+        "trend",
+        "drawdown"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E4",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063017+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "sense",
+      "name": "Risk-Asymmetry Sensing",
+      "function": "Detect skewed payoff structures in any position, strategy, or proposal: tail risk, negative convexity, leverage and margin exposure, liquidation cascades, gamma squeezes, capped upside against unbounded downside, and drawdown asymmetry — a 50% loss needs a 100% recovery. Tag where the risk concentrates and whether the asymmetry favors or punishes the holder.",
+      "category": "structural",
+      "seed_terms": [
+        "tail",
+        "convexity",
+        "leverage",
+        "margin",
+        "liquidation",
+        "gamma",
+        "downside",
+        "skew",
+        "exposure"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E5",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063021+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "sense",
+      "name": "Liquidity-Depth Sensing",
+      "function": "Detect liquidity conditions and their limits: order-book depth, bid-ask spread widening, slippage on size, volume profile, market impact, thin overnight or weekend sessions, and whether the exit door is smaller than the position trying to leave through it.",
+      "category": "structural",
+      "seed_terms": [
+        "liquidity",
+        "order book",
+        "spread",
+        "slippage",
+        "volume",
+        "depth",
+        "impact",
+        "fill"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E6",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063023+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "sense",
+      "name": "Sentiment-Divergence Sensing",
+      "function": "Detect when narrative and positioning diverge from price and flow: euphoria or capitulation in commentary, fear and greed extremes, crowded consensus trades, funding rates contradicting spot action, social hype outrunning volume. Tag the direction of the divergence — sentiment leading price, or price leading sentiment.",
+      "category": "affective",
+      "seed_terms": [
+        "sentiment",
+        "euphoria",
+        "capitulation",
+        "fear",
+        "greed",
+        "crowded",
+        "funding",
+        "positioning",
+        "narrative"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E7",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063025+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "sense",
+      "name": "Lookahead-Bias Sensing",
+      "function": "Detect data and backtest pathologies before they contaminate a conclusion: lookahead bias, survivorship bias, overfitting and parameter mining, repainted indicators, stale or later-revised data, in-sample-only evidence, and cherry-picked date windows. Tag every performance claim with the integrity of the data behind it.",
+      "category": "integrity",
+      "seed_terms": [
+        "backtest",
+        "lookahead",
+        "survivorship",
+        "overfit",
+        "in-sample",
+        "out-of-sample",
+        "repainted",
+        "data-mining"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E8",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063028+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "sense",
+      "name": "Catalyst-Horizon Sensing",
+      "function": "Detect the event-time structure around any asset: earnings dates, FOMC meetings, CPI and jobs prints, dividends, options expiry, futures settlement, token unlock and vesting schedules, halvings, index rebalances. Tag each catalyst with the horizon it operates on and whether the input addresses what is already priced in.",
+      "category": "temporal",
+      "seed_terms": [
+        "earnings",
+        "FOMC",
+        "CPI",
+        "expiry",
+        "settlement",
+        "unlock",
+        "vesting",
+        "halving",
+        "rebalance",
+        "catalyst"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E9",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063030+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "sense",
+      "name": "Flow-Footprint Sensing",
+      "function": "Detect traces of large-player activity: accumulation and distribution patterns, open-interest shifts, basis and funding changes, whale transfers, block trades, ETF creations and redemptions, exchange inflows and outflows on-chain. Tag whose footprint the evidence suggests and on what timescale it was left.",
+      "category": "salience",
+      "seed_terms": [
+        "accumulation",
+        "distribution",
+        "open interest",
+        "basis",
+        "whale",
+        "block trade",
+        "inflow",
+        "outflow",
+        "flow"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E10",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063032+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "sense",
+      "name": "Cost-Friction Sensing",
+      "function": "Detect the quiet frictions that eat returns: trading fees, funding costs, borrow rates, slippage, spread crossing, taxes, and rebalancing drag. Tag any performance number or strategy claim that is stated gross of these costs — net is the only honest unit.",
+      "category": "integrity",
+      "seed_terms": [
+        "fees",
+        "funding",
+        "borrow",
+        "slippage",
+        "spread",
+        "taxes",
+        "drag",
+        "net",
+        "gross"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E11",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063034+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "modality",
+      "name": "Expected-Value Reasoning",
+      "function": "Reason about trades and portfolios as probability-weighted payoff distributions, never point predictions: estimate win rate and payoff ratio, expected value net of costs, variance drag, risk of ruin, and Kelly-fraction sizing intuition — under fat-tailed distributions where averages mislead and a single tail event can dominate the lifetime outcome.",
+      "category": "abstraction",
+      "seed_terms": [
+        "expected value",
+        "probability",
+        "payoff",
+        "Kelly",
+        "variance",
+        "ruin",
+        "fat tail",
+        "distribution"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E12",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063037+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "modality",
+      "name": "Regime-Conditional Mapping",
+      "function": "Condition every signal, strategy, and historical analogy on market regime before trusting it: what works trending fails ranging; correlations that diversify in calm converge toward one in crisis; rate, liquidity, and dollar environments reshape factor behavior. Always ask — in which regime was this evidence generated, and which regime is operating now?",
+      "category": "knowledge",
+      "seed_terms": [
+        "regime",
+        "trending",
+        "ranging",
+        "crisis",
+        "correlation",
+        "rates",
+        "liquidity cycle",
+        "factor"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E13",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063039+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "modality",
+      "name": "Risk-First Position Calculus",
+      "function": "Derive position size from maximum acceptable loss, never from conviction: define the invalidation level first, size the position so the stop costs a fixed fraction of capital, cap correlated portfolio heat, budget drawdowns in advance, and treat sizing — not entry — as the primary decision a trader actually controls.",
+      "category": "structure",
+      "seed_terms": [
+        "position size",
+        "stop",
+        "invalidation",
+        "portfolio heat",
+        "drawdown budget",
+        "risk per trade",
+        "sizing"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E14",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063043+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "modality",
+      "name": "Backtest-Skepticism Auditing",
+      "function": "Adversarially audit any strategy claim before trusting it: demand out-of-sample and walk-forward evidence, realistic transaction costs and slippage, parameter sensitivity analysis, sample sizes spanning multiple regimes, and falsifiable assumptions. Treat every glossy equity curve as overfit until it survives the audit.",
+      "category": "integrity",
+      "seed_terms": [
+        "out-of-sample",
+        "walk-forward",
+        "transaction costs",
+        "parameter sensitivity",
+        "sample size",
+        "equity curve",
+        "audit"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E15",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063045+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "modality",
+      "name": "Macro-Microstructure Fusion",
+      "function": "Integrate top-down macro forces — rates, liquidity cycles, dollar strength, credit conditions, central bank posture — with bottom-up microstructure evidence: flows, positioning, depth, basis. Build one coherent picture and surface exactly where the two levels disagree, because that disagreement is usually either the trade or the trap.",
+      "category": "synthesis",
+      "seed_terms": [
+        "macro",
+        "microstructure",
+        "rates",
+        "dollar",
+        "credit",
+        "central bank",
+        "positioning",
+        "fusion"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E16",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063047+00:00",
+        "recurrence": 1
+      }
+    },
+    {
+      "kind": "modality",
+      "name": "Thesis-Falsification Framing",
+      "function": "State every market thesis with its kill switch attached: the invalidation price or event, the time stop, the disconfirming evidence being monitored, and a pre-mortem of the losing case — all written before entry, so that hope cannot rewrite the plan after the position is on.",
+      "category": "metacognition",
+      "seed_terms": [
+        "thesis",
+        "invalidation",
+        "time stop",
+        "disconfirming",
+        "pre-mortem",
+        "falsification",
+        "kill switch"
+      ],
+      "status": "emergent",
+      "provenance": {
+        "origin": "designed:trading-analysis@1.0",
+        "eid": "E17",
+        "born_ring": "0a94d5fda0435fceef221d70dfcd29188e1a345045b442554d9a4970009453cc",
+        "born_at": "2026-06-11T04:00:28.063049+00:00",
+        "recurrence": 1
+      }
+    }
+  ],
+  "pack_sha256": "3ea06ec8c4ae60791d40ae5a053b3a9a70a20e04288daaeda9e1e70691c8597d"
+}

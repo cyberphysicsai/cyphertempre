@@ -1,0 +1,105 @@
+{
+  "name": "trading-analysis",
+  "version": "1.0",
+  "domain": "trading & financial analysis",
+  "faculties": [
+    {
+      "kind": "sense",
+      "name": "Regime-Shift Sensing",
+      "category": "temporal",
+      "function": "Detect early evidence that the market regime is changing: volatility clustering or compression, cross-asset correlation breakdown, liquidity thinning, momentum handing off to mean-reversion (or the reverse), breadth divergence, and trend exhaustion. Tag whether the input describes a trending, ranging, or crisis regime — and flag any analysis that silently assumes yesterday's regime still holds.",
+      "seed_terms": ["volatility", "regime", "correlation", "momentum", "mean-reversion", "breakout", "breadth", "trend", "drawdown"]
+    },
+    {
+      "kind": "sense",
+      "name": "Risk-Asymmetry Sensing",
+      "category": "structural",
+      "function": "Detect skewed payoff structures in any position, strategy, or proposal: tail risk, negative convexity, leverage and margin exposure, liquidation cascades, gamma squeezes, capped upside against unbounded downside, and drawdown asymmetry — a 50% loss needs a 100% recovery. Tag where the risk concentrates and whether the asymmetry favors or punishes the holder.",
+      "seed_terms": ["tail", "convexity", "leverage", "margin", "liquidation", "gamma", "downside", "skew", "exposure"]
+    },
+    {
+      "kind": "sense",
+      "name": "Liquidity-Depth Sensing",
+      "category": "structural",
+      "function": "Detect liquidity conditions and their limits: order-book depth, bid-ask spread widening, slippage on size, volume profile, market impact, thin overnight or weekend sessions, and whether the exit door is smaller than the position trying to leave through it.",
+      "seed_terms": ["liquidity", "order book", "spread", "slippage", "volume", "depth", "impact", "fill"]
+    },
+    {
+      "kind": "sense",
+      "name": "Sentiment-Divergence Sensing",
+      "category": "affective",
+      "function": "Detect when narrative and positioning diverge from price and flow: euphoria or capitulation in commentary, fear and greed extremes, crowded consensus trades, funding rates contradicting spot action, social hype outrunning volume. Tag the direction of the divergence — sentiment leading price, or price leading sentiment.",
+      "seed_terms": ["sentiment", "euphoria", "capitulation", "fear", "greed", "crowded", "funding", "positioning", "narrative"]
+    },
+    {
+      "kind": "sense",
+      "name": "Lookahead-Bias Sensing",
+      "category": "integrity",
+      "function": "Detect data and backtest pathologies before they contaminate a conclusion: lookahead bias, survivorship bias, overfitting and parameter mining, repainted indicators, stale or later-revised data, in-sample-only evidence, and cherry-picked date windows. Tag every performance claim with the integrity of the data behind it.",
+      "seed_terms": ["backtest", "lookahead", "survivorship", "overfit", "in-sample", "out-of-sample", "repainted", "data-mining"]
+    },
+    {
+      "kind": "sense",
+      "name": "Catalyst-Horizon Sensing",
+      "category": "temporal",
+      "function": "Detect the event-time structure around any asset: earnings dates, FOMC meetings, CPI and jobs prints, dividends, options expiry, futures settlement, token unlock and vesting schedules, halvings, index rebalances. Tag each catalyst with the horizon it operates on and whether the input addresses what is already priced in.",
+      "seed_terms": ["earnings", "FOMC", "CPI", "expiry", "settlement", "unlock", "vesting", "halving", "rebalance", "catalyst"]
+    },
+    {
+      "kind": "sense",
+      "name": "Flow-Footprint Sensing",
+      "category": "salience",
+      "function": "Detect traces of large-player activity: accumulation and distribution patterns, open-interest shifts, basis and funding changes, whale transfers, block trades, ETF creations and redemptions, exchange inflows and outflows on-chain. Tag whose footprint the evidence suggests and on what timescale it was left.",
+      "seed_terms": ["accumulation", "distribution", "open interest", "basis", "whale", "block trade", "inflow", "outflow", "flow"]
+    },
+    {
+      "kind": "sense",
+      "name": "Cost-Friction Sensing",
+      "category": "integrity",
+      "function": "Detect the quiet frictions that eat returns: trading fees, funding costs, borrow rates, slippage, spread crossing, taxes, and rebalancing drag. Tag any performance number or strategy claim that is stated gross of these costs — net is the only honest unit.",
+      "seed_terms": ["fees", "funding", "borrow", "slippage", "spread", "taxes", "drag", "net", "gross"]
+    },
+    {
+      "kind": "modality",
+      "name": "Expected-Value Reasoning",
+      "category": "abstraction",
+      "function": "Reason about trades and portfolios as probability-weighted payoff distributions, never point predictions: estimate win rate and payoff ratio, expected value net of costs, variance drag, risk of ruin, and Kelly-fraction sizing intuition — under fat-tailed distributions where averages mislead and a single tail event can dominate the lifetime outcome.",
+      "seed_terms": ["expected value", "probability", "payoff", "Kelly", "variance", "ruin", "fat tail", "distribution"]
+    },
+    {
+      "kind": "modality",
+      "name": "Regime-Conditional Mapping",
+      "category": "knowledge",
+      "function": "Condition every signal, strategy, and historical analogy on market regime before trusting it: what works trending fails ranging; correlations that diversify in calm converge toward one in crisis; rate, liquidity, and dollar environments reshape factor behavior. Always ask — in which regime was this evidence generated, and which regime is operating now?",
+      "seed_terms": ["regime", "trending", "ranging", "crisis", "correlation", "rates", "liquidity cycle", "factor"]
+    },
+    {
+      "kind": "modality",
+      "name": "Risk-First Position Calculus",
+      "category": "structure",
+      "function": "Derive position size from maximum acceptable loss, never from conviction: define the invalidation level first, size the position so the stop costs a fixed fraction of capital, cap correlated portfolio heat, budget drawdowns in advance, and treat sizing — not entry — as the primary decision a trader actually controls.",
+      "seed_terms": ["position size", "stop", "invalidation", "portfolio heat", "drawdown budget", "risk per trade", "sizing"]
+    },
+    {
+      "kind": "modality",
+      "name": "Backtest-Skepticism Auditing",
+      "category": "integrity",
+      "function": "Adversarially audit any strategy claim before trusting it: demand out-of-sample and walk-forward evidence, realistic transaction costs and slippage, parameter sensitivity analysis, sample sizes spanning multiple regimes, and falsifiable assumptions. Treat every glossy equity curve as overfit until it survives the audit.",
+      "seed_terms": ["out-of-sample", "walk-forward", "transaction costs", "parameter sensitivity", "sample size", "equity curve", "audit"]
+    },
+    {
+      "kind": "modality",
+      "name": "Macro-Microstructure Fusion",
+      "category": "synthesis",
+      "function": "Integrate top-down macro forces — rates, liquidity cycles, dollar strength, credit conditions, central bank posture — with bottom-up microstructure evidence: flows, positioning, depth, basis. Build one coherent picture and surface exactly where the two levels disagree, because that disagreement is usually either the trade or the trap.",
+      "seed_terms": ["macro", "microstructure", "rates", "dollar", "credit", "central bank", "positioning", "fusion"]
+    },
+    {
+      "kind": "modality",
+      "name": "Thesis-Falsification Framing",
+      "category": "metacognition",
+      "function": "State every market thesis with its kill switch attached: the invalidation price or event, the time stop, the disconfirming evidence being monitored, and a pre-mortem of the losing case — all written before entry, so that hope cannot rewrite the plan after the position is on.",
+      "seed_terms": ["thesis", "invalidation", "time stop", "disconfirming", "pre-mortem", "falsification", "kill switch"]
+    }
+  ]
+}

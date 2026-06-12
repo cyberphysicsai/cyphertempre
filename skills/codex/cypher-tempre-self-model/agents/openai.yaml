@@ -1,0 +1,5 @@
+interface:
+  display_name: "Cypher Tempre Self-Model"
+  short_description: "Verifiable long-horizon memory and codebase cartography"
+  brand_color: "#2563EB"
+  default_prompt: "Use $cypher-tempre-self-model to verify my chain, recall source-aware rings, validate live source, and seal this turn."

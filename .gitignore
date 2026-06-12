@@ -1,12 +1,24 @@
-# Runtime / instance data — each agent forges its own; never published
-chain/
-tasks/
-**/blockspace/
-**/LOCKED
-
-# Python
-__pycache__/
-*.pyc
-
-# OS
 .DS_Store
+__pycache__/
+*.py[cod]
+node_modules/
+dashboard/node_modules/
+
+# Generated agent memory and long-horizon task state. These are created per user.
+**/chain/
+**/tasks/
+# Grown faculties — the per-user Dream Cache (emergent) and promoted faculties (grown).
+# Created on first growth; never shipped, so upgrading over an existing install can't
+# reset a user's emergent OR promoted faculties.
+**/registry/emergent.json
+**/registry/grown.json
+# Per-user learner state (Phases B-E) — trained operators and covenant-tolerance
+# overrides belong to each agent, never to the shipped base. The chain/-rooted
+# ledgers (telemetry, salience, replay, dream state) are covered by **/chain/.
+**/registry/policy.json
+**/registry/scorer.json
+**/registry/labeler.json
+**/registry/lens/
+
+# Local tooling
+.claude/

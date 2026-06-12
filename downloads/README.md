@@ -1,17 +1,23 @@
-# Cypher Tempre Dashboard Local Bridge
+# Cypher Tempre Dashboard Downloads
 
-Download `cyphertempre-dashboard-local-bridge-accountfix.zip` to run the local
-bridge used by `https://cyphertempre.ai`.
+These files support the public Timechain dashboard at `https://cyphertempre.ai`.
 
-The hosted site is only a static UI. The bridge runs on the user's own machine,
-reads that user's local `cypher-tempre-self-model` skill files, verifies the
-Base CPHY payment locally, and stores redeemed payment hashes locally.
+- `cyphertempre-ai-hostinger-root-accountfix.zip` is the static site bundle for
+  Hostinger `public_html`.
+- `cyphertempre-dashboard-local-bridge-accountfix.zip` is the local bridge
+  package users run on their own machines.
 
-## Run
+The hosted site is only a static UI. The local bridge reads the user's own
+`cypher-tempre-self-model` files, verifies the Base CPHY payment locally,
+requires a payer-wallet signature for the current session challenge, and stores
+redeemed payment hashes locally.
+
+## Local Bridge Run Commands
 
 ```bash
 cd ~/Downloads
-unzip cyphertempre-dashboard-local-bridge-accountfix.zip
+curl -L -o cyphertempre-dashboard-local-bridge-accountfix.zip https://github.com/cyberphysicsai/cypher-tempre-genesis/raw/main/downloads/cyphertempre-dashboard-local-bridge-accountfix.zip
+unzip -o cyphertempre-dashboard-local-bridge-accountfix.zip
 cd dashboard
 npm install
 npm run bridge
