@@ -9,8 +9,8 @@ Timechain data stays on the user's machine, read by their own local bridge.
 
 1. In Hostinger hPanel, open Websites and manage `cyphertempre.ai`.
 2. Open File Manager for the domain, then `public_html`.
-3. Delete the previous site files (including any old `reown-wallet.js` — the
-   wallet bundle no longer exists).
+3. Delete the previous site files so `public_html` contains only the current
+   static dashboard files.
 4. Upload every file from `dashboard/public` into `public_html`:
 
 ```text
